@@ -1,0 +1,156 @@
+<br>
+<h1  style="text-align:center; color:blue"  >ADD PRODUCT</h1>
+
+
+<br>
+<form #empForm=ngForm (ngSubmit)="addData()">
+<div class="form-group row">
+    <td></td>
+        <label  for="inputId" class="col-sm-3 col-form-label"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Product ID</b></label>
+            <div class="col-sm-3">
+            <input type="text" class="form-control" name="id" id="eid" [(ngModel)]="proId" #idControl="ngModel" required  >
+            <span  class="alert alert-primary" role="alert" *ngIf="idControl.touched && idControl.invalid">ID should be filled</span>    
+        </div>
+            </div>
+        <div class="form-group row">
+                <label for="inputName" class="col-sm-3 col-form-label"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Product Name</b></label>
+                    <div class="col-sm-3">
+                    <input type="text" class="form-control" [(ngModel)]="proName" id="ename" name="nname" #nameControl="ngModel" required>
+                    <span  class="alert alert-primary" role="alert" *ngIf="nameControl.touched && nameControl.invalid">Name should be filled</span>    
+                </div>
+        </div>
+        <div class="form-group row">
+                <label for="inputCost" class="col-sm-3 col-form-label"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Product Cost</b></label>
+                    <div class="col-sm-3">
+                    <input type="text" class="form-control" [(ngModel)]="proCost" id="esalary" name="salary" #salaryControl="ngModel" required>
+                    <span  class="alert alert-primary" role="alert" *ngIf="salaryControl.touched && salaryControl.invalid">Cost should be filled</span>
+                </div>
+        </div>
+       
+        <fieldset class="form-group">
+                <div class="row">
+                  <legend class="col-form-label col-sm-3 pt-3"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Product Online</b></legend>
+                  <div class="col-sm-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" [(ngModel)]="proOnline" name="online" value="YES" id="on1" #onlineControl="ngModel" required >
+                      <label class="form-check-label" for="on1">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" [(ngModel)]="proOnline" name="online" value="NO" id="on2" #onlineControl="ngModel" required>
+                      <label class="form-check-label" for="on2">
+                        No
+                      </label>
+                    </div>
+                 </div>
+                </div>
+                <span class="alert alert-danger" role="alert" *ngIf="onlineControl.touched && onlineControl.invalid">It should be Selected</span> 
+              </fieldset>
+
+              <label class="form-check-label" for="check1">
+                <div class="col-sm-12"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Product Category&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b>
+                </div> </label>
+              
+              <select class="col-sm-3"  id="ecategory" name="category" [(ngModel)]="proCate" #cateControl="ngModel" required>
+                    <option value="Mobile">Mobile</option>
+                    <option value="Grocery">Grocery</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Cloths">Cloths</option>
+                    
+                  </select>
+              
+                  <span class="alert alert-danger" role="alert" *ngIf="cateControl.touched && cateControl.invalid">It should be Selected</span> 
+                
+              <br><br>
+                    <div class="form-group row">
+                    <div class="col-sm-3"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Available in Store</b></div>
+                   
+                    <div class="col-sm-5">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="check1" name="Store" [(ngModel)]="proStore1" value="Big Bazaar" required>
+                        <label class="form-check-label" for="check1">
+                          Big Bazaar
+                        </label>
+                      </div>
+                      <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check2" name="Store" [(ngModel)]="proStore2" value="Dmart" required >
+                            <label class="form-check-label" for="check2">
+                              Dmart
+                            </label>
+                          </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="check3" name="Store" [(ngModel)]="proStore3" value="Reliance"  required>
+                                <label class="form-check-label" for="check3">
+                                     Reliance
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="check4" name="Store" [(ngModel)]="proStore4" value="Mega Store" required>
+                                    <label class="form-check-label" for="check4">
+                                     Mega Store
+                                    </label>
+                                  </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                        <div style="text-align:center" class="col-sm-12">
+                                 
+                                      
+                                <div style="text-align:center">       
+                            <input type="submit" class="btn btn-success " value="ADD PRODUCT" [disabled]="empForm.invalid">
+                        </div>
+                        <div style="text-align:center">
+                            <input type="reset" class="btn btn-primary" value="Reset"/>
+                        </div>
+                        </div>
+                      </div>
+
+</form>
+
+
+
+<br><br>
+<h1 style="text-align:center; color: rgb(10, 6, 248);  ">SHOW PRODUCT</h1>
+
+<br>
+
+<table border='2'  align="center" >
+    <tr>
+        <th class="table-success">Product Id</th>
+        <th class="table-success" >Product Name</th>
+    
+        <th class="table-success">Product Cost</th>
+        <th class="table-success">Product Online</th>
+        <th class="table-success">Product Category</th>
+        <th class="table-success">Product Available Stores</th>
+        <th class="table-success" >Action</th>
+    
+    </tr>
+    
+    <tr *ngFor="let data of proAll;let i=index">
+        <td class="table-primary">
+            {{data.proId}}
+        </td>
+        <td class="table-primary">
+            {{data.proName}}
+        </td>
+        <td class="table-primary">
+                {{data.proCost}}
+            </td>
+        <td class="table-primary">
+                {{data.proOnline}}
+            </td>
+       
+        
+        <td class="table-primary">
+            {{data.proCate}}
+        </td>
+        <td class="table-primary">
+            {{data.proStore1}}
+        </td>
+        <td><input style="height:35px; width:100px"  class="btn btn-danger" type="button" value="Delete" (click)="proDelete(i)"/></td>
+    </tr>
+</table>
+
