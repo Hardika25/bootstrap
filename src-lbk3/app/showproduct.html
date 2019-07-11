@@ -1,0 +1,20 @@
+<h1>Show Product....</h1>
+
+<table border="1">
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Product Cost</th>
+        
+           
+        </tr>
+    
+            <tr *ngFor="let prod of prodAll">
+                <td>{{prod.prodId}}</td>
+                <td>{{prod.prodName}}</td>
+                <td>{{prod.prodCost}}</td>
+              
+            </tr>
+    
+           
+    </table>

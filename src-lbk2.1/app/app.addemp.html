@@ -1,0 +1,126 @@
+<form #empForm=ngForm (ngSubmit)="addEmployee()">
+<font style="text-align: center;" color="blue"  ><h1>ADD EMPLOYEE</h1></font>
+<table align="center">
+    <tr>
+        <td>
+          Id
+        </td>
+        <td>
+          <input type="text" class="form-control" name="id" id="id"  [(ngModel)]="empId" #idControl="ngModel" required/> 
+          <span  class="alert alert-primary" role="alert" *ngIf="idControl.touched && idControl.invalid">ID should be filled</span> 
+        </td>
+    </tr>
+    
+    <tr>
+      <td>
+        Name
+      </td>
+      <td>
+        <input type="text" class="form-control" name="name" id="name" [(ngModel)]="empName" #nameControl="ngModel" required />
+        <span  class="alert alert-primary" role="alert" *ngIf="nameControl.touched && nameControl.invalid">Name should be filled</span> 
+
+      </td>
+  </tr>
+  <tr>
+      <td>
+        Salary
+      </td>
+      <td>
+        <input type="text" class="form-control" name="salary" id="salary"  [(ngModel)]="empSal"  #salaryControl="ngModel" required />
+    
+      <span  class="alert alert-primary" role="alert" *ngIf="salaryControl.touched && salaryControl.invalid">Salary should be filled</span> 
+      </td>
+
+  </tr>
+  
+  <tr>
+    <td>
+      Department
+    </td>
+    <td>
+      <input type="text" class="form-control" name="dept" id="dept" [(ngModel)]="empDep" #deptControl="ngModel" required  />
+      <span  class="alert alert-primary" role="alert" *ngIf="deptControl.touched && deptControl.invalid">Department should be filled</span> 
+    </td>
+</tr>
+  <tr>
+      <td>
+          <input type="button" class="btn btn-success"  value="Add Employee" (click)="addEmployee()" />
+      </td>
+  </tr>
+</table>
+
+<br><br>
+<font style="text-align: center;" color="blue"  ><h1>SHOW EMPLOYEES</h1></font>
+
+<table align="center" border="2" class="table=success" >
+    <tr>
+        <th >Id</th>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>Department</th>
+        <th colspan="2">Action</th>  
+    </tr>
+
+    <tr *ngFor="let data of empAll;let i=index">
+      <td>{{data.empId}}</td>
+      <td>{{data.empName}}</td>
+      <td>{{data.empSal}}</td>
+      <td>{{data.empDep}}</td>
+      
+      <td><input type="button" class="btn btn-danger" value="UPDATE" (click)="putEmployee(i)"/></td>
+      <td><input type="button" class="btn btn-danger"  value="DELETE" (click)="deleteEmployee(i)"/></td>
+      
+    </tr>
+</table>
+<br><br>
+<font style="text-align: center;" color="green"  ><h1>UPDATE EMPLOYEE</h1></font>
+<table align="center">
+    <tr>
+        <td>
+          Id
+        </td>
+        <td>
+          <input type="text" class="form-control" name="uid" id="uid" [(ngModel)]="uempId"  #idControl="ngModel" required /> 
+          <span  class="alert alert-primary" role="alert" *ngIf="uidControl.touched && uidControl.invalid">ID should be filled</span> 
+
+        </td>
+    </tr>
+    
+    <tr>
+      <td>
+        Name
+      </td>
+      <td>
+        <input type="text" class="form-control" name="uname" id="uname"  [(ngModel)]="uempName" #nameControl="ngModel" required />
+        <span  class="alert alert-primary" role="alert" *ngIf="unameControl.touched && unameControl.invalid">Name should be filled</span> 
+
+      </td>
+  </tr>
+  <tr>
+      <td>
+        Salary
+      </td>
+      <td>
+        <input type="text" class="form-control" name="usalary" id="usalary"  [(ngModel)]="uempSal"  #salaryControl="ngModel" required />
+    
+        <span  class="alert alert-primary" role="alert" *ngIf="usalaryControl.touched && usalaryControl.invalid">Salary should be filled</span> 
+      </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Department
+    </td>
+    <td>
+      <input type="text" class="form-control" name="udept" id="udept" [(ngModel)]="uempDep" #deptControl="ngModel" required  />
+      <span  class="alert alert-primary" role="alert" *ngIf="udeptControl.touched && udeptControl.invalid">Department should be filled</span> 
+    </td>
+</tr>
+  <tr>
+      <td>
+          <input type="button" class="btn btn-success"  value="Update Employee" (click)="updateEmployee()" />
+      </td>
+  </tr>
+</table>
+
+</form>

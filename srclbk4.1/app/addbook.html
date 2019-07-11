@@ -1,0 +1,20 @@
+
+<table border="2 " align="center">
+    <tr>
+        <th class="table-success">Book ID</th>
+        <th class="table-success">Book Title</th>
+        <th class="table-success">Book Author</th>
+        <th class="table-success">Book Year of publish</th>
+    
+    </tr>
+
+        <tr class= " table-info" *ngFor="let bk of books">
+            <td>{{bk.id}}</td>
+            <td>{{bk.title}}</td>
+            <td>{{bk.author}}</td>
+            <td>{{bk.year}}</td>
+         
+        </tr>
+
+       
+</table>

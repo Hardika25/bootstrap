@@ -1,0 +1,23 @@
+<!--Employee Id is{{empId}} <br/>
+Employee Name is{{empName}}<br/>
+Employee Salary is{{empSalary}} <br/>-->
+
+<table border="5"  class="table"  align="center" >
+   <thead class="thead-dark">
+    <tr>
+        <th class="table-primary"> <a (click)="SortById()"> ID</a> </th>
+        <th class="table-primary"> <a (click)="SortByName()">Name</a></th>
+        <th class="table-primary"> <a (click)="SortBySalary()">Salary</a></th>
+        <th class="table-primary"> <a (click)="SortByDepartment()">Department</a></th>
+        <th class="table-primary"> <a (click)=" SortByJoiningDate()">Date Of Joining</a></th>
+    </tr>
+</thead>
+    <tr  class="table-warning" *ngFor="let data of empAll; let i=index">
+        <td>{{data.empId}}</td>
+        <td>{{data.empName}}</td>
+        <td>{{data.empSal}}</td>
+        <td>{{data.empDep}}</td>
+        <td>{{data.empjoiningdate}}</td>
+      <!--  <td><input type="button" value="DELETE" (click)="deleteEmployee(i)"/></td> --><!--To delete particular value-->
+    </tr>
+</table>

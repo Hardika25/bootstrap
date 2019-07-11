@@ -1,0 +1,50 @@
+<h1>Add Product..</h1>
+<form #proForm=ngForm (ngSubmit)="addData()">
+<table>
+     <tr>
+         <td>Product Id</td>
+         <td><input type="text" id="eid" name="id" [(ngModel)]="prodId" #idcontrol="ngModel" required/></td>
+         <span  class="alert alert-primary" role="alert"  *ngIf="idcontrol.touched && idcontrol.invalid">Product ID should be filled</span>
+     </tr>
+    
+    <tr>
+            <td>Product Name</td>
+            <td><input type="text" id="ename" name="name" [(ngModel)]="prodName" #namecontrol="ngModel" required/></td>
+            <span *ngIf="namecontrol.touched && namecontrol.invalid">Product Name should be filled</span>
+     </tr>
+
+    <tr>
+            <td>Product Cost</td>
+            <td><input type="text" id= "cost" name="cost" [(ngModel)]="prodCost" #costcontrol="ngModel" required/></td>
+            <span *ngIf="costcontrol.touched && costcontrol.invalid">Product Cost should be filled</span>
+        </tr>
+    
+        <tr>
+            <td>Product Online </td>
+            <td><input type="radio" value="Yes" />Yes </td>
+            <td><input type="radio" value="No" />No </td>
+        </tr>
+        <tr>
+            <td>Product Category</td>
+            <td><select>
+                <option value="Selectone">Select one</option>
+                <option value="Grocery">Grocery</option>
+                <option value="Mobile">Mobile</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Clothes">Clothes</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>Available In Store</td>
+            <td></td>
+            <td><input type="checkbox" value="BigBazaar"/>  Big Bazaar</td>
+            <td><input type="checkbox" value="Dmart"/> Dmart </td>
+            <td><input type="checkbox" value="reliance"/>Reliance</td>
+            <td><input type="checkbox" value="Mega store"/>Mega store</td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Add Product" [disabled]="proForm.invalid"/></td>
+        </tr>
+    
+</table>
+</form>
